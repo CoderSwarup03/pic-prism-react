@@ -18,7 +18,6 @@ export default function App() {
           <Route path='/buyer/profile' element={<BuyerDashboard/>}/>
         </Routes>
       </BrowserRouter>
-
     </>
   )
 }
