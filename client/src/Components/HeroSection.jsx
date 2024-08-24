@@ -9,7 +9,7 @@ const HeroSection = () => {
                     type="search"
                     name="search"
                     id="search"
-                    className='py-5 px-3 w-[75vw] text-xl sm:text-3xl mx-auto outline-none border-b-2 bg-bgColor' placeholder='Search Your Assect'
+                    className='py-5 px-3 w-[75vw] sm:w-[45vw] text-xl sm:text-3xl sm:rounded-xl mx-auto outline-none border-b-2 bg-bgColor' placeholder='Search Your Assect'
                 />
                 <IoIosSearch className='text-3xl sm:text-5xl text-gray-400 -ml-10'/>
             </form>

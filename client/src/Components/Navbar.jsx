@@ -5,12 +5,13 @@ const Navbar = () => {
         <>
             <nav className='flex flex-col sm:flex-row justify-between items-start sm:items-center px-5 py-5 fixed top-0 left-0 right-0 shadow-md gap-1 sm:gap-0 z-30 bg-white'>
                 {/* logo and sitename */}
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between items-center gap-2'>
                     {/* image add later  */}
+                    <img src="pic-prism.png" alt="our logo" className='w-[52px] h-[42px]'/>
                     <Link to='/' className='font-bold text-3xl'>PicPrism</Link>
                 </div>
                 {/* list of other tabs */}
-                <ul className='flex gap-5 text-lg font-semibold text-gray-400'>
+                <ul className='flex gap-5 text-lg font-semibold text-gray-400 ml-5 sm:ml-0'>
                     <Link to='/' className='hover:text-black sm:p-2'>About</Link>
                     <Link to='/' className='hover:text-black sm:p-2'>Contact</Link>
                     <Link to='/login' className='hover:text-black sm:p-2'>Log In</Link>
@@ -22,3 +23,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+// 49:00
