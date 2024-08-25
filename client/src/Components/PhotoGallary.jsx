@@ -47,7 +47,7 @@ const PhotoGallary = () => {
                     title="Elephant Moun"
                     author="swarup_dev"
                     price={32}
-                    img="https://images.pexels.com/photos/26924196/pexels-photo-26924196/free-photo-of-an-elephant-in-a-field.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    img="https://images.pexels.com/photos/26755457/pexels-photo-26755457/free-photo-of-three-polar-bears-by-river.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     icon1={<FaShoppingCart className='text-2xl hover:scale-110 transition-all duration-300 ease-linear' />}
                     icon2={<IoIosHeart className='text-2xl hover:scale-110 transition-all duration-300 ease-linear' />}
                 />
@@ -63,7 +63,7 @@ const PhotoGallary = () => {
                     title="Elephant Moun"
                     author="swarup_dev"
                     price={32}
-                    img="https://images.pexels.com/photos/26924196/pexels-photo-26924196/free-photo-of-an-elephant-in-a-field.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    img="https://images.pexels.com/photos/26755457/pexels-photo-26755457/free-photo-of-three-polar-bears-by-river.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     icon1={<FaShoppingCart className='text-2xl hover:scale-110 transition-all duration-300 ease-linear' />}
                     icon2={<IoIosHeart className='text-2xl hover:scale-110 transition-all duration-300 ease-linear' />}
                 />
@@ -75,5 +75,4 @@ const PhotoGallary = () => {
 
 export default PhotoGallary
 
-// 22
 

@@ -17,6 +17,7 @@ export default function App() {
           <Route path='/seller/profile' element={<SellerDashboard/>}/>
           <Route path='/buyer/profile' element={<BuyerDashboard/>}/>
         </Routes>
+        {/* add footer here */}
       </BrowserRouter>
     </>
   )
