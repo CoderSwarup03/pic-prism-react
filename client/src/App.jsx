@@ -1,22 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './Pages/Home'
-import Login from './Pages/Login'
-import Signup from './Pages/Signup'
-import SellerDashboard from './Pages/SellerDashboard' 
-import BuyerDashboard from './Pages/BuyerDashboard' 
-import Navbar from './Components/Navbar'                           
+import { BrowserRouter } from 'react-router-dom'
+import Navbar from './Components/Navbar'
+import GsapTransition from './Components/GsapTransition'
 export default function App() {
-  return (  
+  return (
     <>
       <BrowserRouter>
-      <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/signup' element={<Signup/>}/>
-          <Route path='/seller/profile' element={<SellerDashboard/>}/>
-          <Route path='/buyer/profile' element={<BuyerDashboard/>}/>
-        </Routes>
+        <Navbar />
+        <GsapTransition />
         {/* add footer here */}
       </BrowserRouter>
     </>
