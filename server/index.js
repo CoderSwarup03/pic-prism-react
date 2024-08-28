@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const { connetDb } = require("./connection");
 // readdirSync used for folder stracture read
 const {readdirSync} = require('fs')
+const cors = require("cors")
 
 
 // const authRoute = require("./routes/authRoutes")
@@ -30,6 +31,10 @@ app.get("/", (req, res) => {
 
 
 connetDb();
+
+// import middleware
+app.use(cors())
+app.use(express.json())
 
 // how to use routes
 // app.use("/api", authRoute);
