@@ -1,11 +1,13 @@
 const User = require("../models/User")
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcrypt")
-
+const bcrypt = require("bcrypt");
+const { generateAccessToken } = require("../helpers/accessToken");
+const { generateRefreshToken } = require("../helpers/refreshToken");
+// signup logic
 const signup = async (req, res) => {
     const { username, email, password, accountType } = req.body;
     try {
-        
+
         let user = await User.findOne({ username });
 
         if (user) {
@@ -21,13 +23,49 @@ const signup = async (req, res) => {
         })
 
         await user.save();
-        return res.status(201).json({success: true, message: "User created successfully"})
+        return res.status(201).json({ success: true, message: "User created successfully" })
 
     } catch (error) {
         return res.status(500).json({ success: false, message: error.message })
     }
 
 };
-const login = async (req, res) => { }
+// login logic
+const login = async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        let user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ success: false, message: "Please Signup" });
+        }
+        // compare password to signup password
+        const comparePassword = await bcrypt.compare(password, user.password);
+        if(!comparePassword) return res.status(400).json({success: false , message: "Invalid Password Credentails"})
+        
+        // create accessToken data
+        const data = {
+            id: user._id,
+            accountType: user.accountType,
+            author: user.username,
+        }
+
+        const accessToken = generateAccessToken(data);
+        const refreshToken  = generateRefreshToken(data);
+
+        // client side showing
+        return res.status(200).json({
+            success: true,
+            message: "Login Successful",
+            accessToken,
+            refreshToken,
+            role: user.accountType,
+            author: user.username
+        });
+
+    } catch (error) {
+        return res.status(500).json({ success: false, message: error.message });
+    }
+}
 
 module.exports = { login, signup }
